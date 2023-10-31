@@ -5,16 +5,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 
 @Entity(tableName = "Student")
-public class Student {
-
-    @ColumnInfo(name ="name")
-    private String name;
-
-    @ColumnInfo(name = "surname")
-    private String surname;
-
-    @ColumnInfo(name = "email")
-    private String email;
+public class Student extends Person{
 
     @ColumnInfo(name = "number")
     private String number;
@@ -28,26 +19,32 @@ public class Student {
     @ColumnInfo(name = "birthdate")
     private String birthdate;
 
-    public Student(String name, String surname, String email, String number, String dni, String familynumber, String birthdate) {
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
+    public Student(String name, String surNames, String email, String number, String dni, String familynumber, String birthdate) {
+        super(name, surNames, email);
         this.number = number;
         this.dni = dni;
         this.familynumber = familynumber;
         this.birthdate = birthdate;
     }
 
-    public String getName() {
-        return name;
+    public Student() {
+        super();
     }
 
-    public String getSurname() {
-        return surname;
+    public void setNumber(String number) {
+        this.number = number;
     }
 
-    public String getEmail() {
-        return email;
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public void setFamilynumber(String familynumber) {
+        this.familynumber = familynumber;
+    }
+
+    public void setBirthdate(String birthdate) {
+        this.birthdate = birthdate;
     }
 
     public String getNumber() {
@@ -65,6 +62,8 @@ public class Student {
     public String getBirthdate() {
         return birthdate;
     }
+
+
 
 
 }

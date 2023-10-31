@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 
 @Entity
-public class Person {
+public abstract class Person {
 
     @ColumnInfo(name = "name")
     private String name;
@@ -19,6 +19,9 @@ public class Person {
         this.name = name;
         this.surNames = surNames;
         this.email = email;
+    }
+
+    public Person() {
     }
 
     public String getName() {

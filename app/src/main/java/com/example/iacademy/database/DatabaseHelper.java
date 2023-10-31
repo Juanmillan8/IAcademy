@@ -9,6 +9,7 @@ import androidx.room.DatabaseConfiguration;
 import androidx.room.InvalidationTracker;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
 
 import com.example.iacademy.daos.AcademyDao;
@@ -20,7 +21,7 @@ import com.example.iacademy.daos.LessonDao;
 import com.example.iacademy.daos.ManagerDao;
 import com.example.iacademy.daos.StudentDao;
 import com.example.iacademy.daos.TeacherDao;
-import com.example.iacademy.daos.UserDao;
+import com.example.iacademy.daos.UserAccountDao;
 import com.example.iacademy.models.Academy;
 import com.example.iacademy.models.Administrator;
 import com.example.iacademy.models.Classroom;
@@ -30,9 +31,10 @@ import com.example.iacademy.models.Lesson;
 import com.example.iacademy.models.Manager;
 import com.example.iacademy.models.Student;
 import com.example.iacademy.models.Teacher;
-import com.example.iacademy.models.User;
+import com.example.iacademy.models.UserAccount;
 
-@Database(entities = {Administrator.class, Manager.class, Teacher.class, User.class, Classroom.class, Inscription.class, Student.class, Academy.class, Course.class, Lesson.class}, version = 1)
+@Database(entities = {Administrator.class, Manager.class, Teacher.class, UserAccount.class, Classroom.class, Inscription.class, Student.class, Academy.class, Course.class, Lesson.class}, version = 1)
+@TypeConverters({Converters.class})
 public abstract class DatabaseHelper extends RoomDatabase{
 
     public abstract AcademyDao academyDao();
@@ -51,7 +53,7 @@ public abstract class DatabaseHelper extends RoomDatabase{
 
     public abstract TeacherDao teacherDao();
 
-    public abstract UserDao userDao();
+    public abstract UserAccountDao UserAccountDao();
 
     // Instancia estática de la clase, para poder usarla en toda la aplicación
     private static DatabaseHelper instance;
