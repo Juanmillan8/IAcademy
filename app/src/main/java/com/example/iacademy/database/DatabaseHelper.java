@@ -5,21 +5,35 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;
+import androidx.room.DatabaseConfiguration;
+import androidx.room.InvalidationTracker;
+import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
 
 import com.example.iacademy.daos.AdministratorDao;
+import com.example.iacademy.daos.ClassroomDao;
+import com.example.iacademy.daos.InscriptionDao;
 import com.example.iacademy.daos.ManagerDao;
+import com.example.iacademy.daos.StudentDao;
 import com.example.iacademy.daos.TeacherDao;
 import com.example.iacademy.daos.UserDao;
 import com.example.iacademy.models.Administrator;
+import com.example.iacademy.models.Classroom;
+import com.example.iacademy.models.Inscription;
 import com.example.iacademy.models.Manager;
+import com.example.iacademy.models.Student;
 import com.example.iacademy.models.Teacher;
 import com.example.iacademy.models.User;
 
-@Database(entities = {Administrator.class, Manager.class, Teacher.class, User.class}, version = 1)
+@Database(entities = {Administrator.class, Manager.class, Teacher.class, User.class, Classroom.class, Inscription.class, Student.class}, version = 1)
 public abstract class DatabaseHelper extends RoomDatabase{
 
+    public abstract ClassroomDao classroomDao();
+
+    public abstract InscriptionDao inscriptionDao();
+
+    public abstract StudentDao studentDao();
 
     public abstract AdministratorDao administratorDao();
     public abstract ManagerDao managerDao();
