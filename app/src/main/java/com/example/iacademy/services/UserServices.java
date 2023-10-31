@@ -8,7 +8,7 @@ import com.example.iacademy.models.User;
 
 import java.util.List;
 
-public class UserServices {
+public class UserServices implements UserDao{
 
     private UserDao userDao;
 
