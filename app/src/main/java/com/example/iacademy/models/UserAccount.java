@@ -5,6 +5,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "userAccount")
+
 public class UserAccount {
 
     @ColumnInfo(name = "userName")
