@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 
 @Entity(tableName = "Classroom")
-public class Classroom {
+public class Classroom extends DomainEntity{
 
     @ColumnInfo(name = "name")
     private String name;
@@ -12,9 +12,8 @@ public class Classroom {
     @ColumnInfo(name = "capacity")
     private long capacity;
 
-    public Classroom(String name, long capacity) {
-        this.name = name;
-        this.capacity = capacity;
+    public Classroom() {
+        super();
     }
 
     public String getName() {

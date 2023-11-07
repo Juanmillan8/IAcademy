@@ -2,7 +2,6 @@ package com.example.iacademy.database;
 
 
 import android.content.Context;
-
 import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.DatabaseConfiguration;
@@ -11,7 +10,6 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
-
 import com.example.iacademy.daos.AcademyDao;
 import com.example.iacademy.daos.AdministratorDao;
 import com.example.iacademy.daos.ClassroomDao;

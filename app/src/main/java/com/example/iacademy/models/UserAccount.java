@@ -1,12 +1,13 @@
 package com.example.iacademy.models;
 
 import androidx.room.ColumnInfo;
+import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "userAccount")
+@Entity
+public class UserAccount{
 
-public class UserAccount {
 
     @ColumnInfo(name = "userName")
     private String userName;
@@ -14,12 +15,10 @@ public class UserAccount {
     @ColumnInfo(name = "password")
     private String password;
 
-    @PrimaryKey(autoGenerate = true)
-    private long id;
+    @ColumnInfo(name = "rol")
+    private String rol;
 
-    public UserAccount(String userName, String password){
-        this.userName = userName;
-        this.password = password;
+    public UserAccount(){
 
 
     }
@@ -32,10 +31,6 @@ public class UserAccount {
         return password;
     }
 
-    public long getId() {
-        return id;
-    }
-
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -44,7 +39,11 @@ public class UserAccount {
         this.password = password;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 }

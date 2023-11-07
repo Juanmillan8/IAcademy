@@ -6,13 +6,14 @@ import androidx.room.Entity;
 import java.time.LocalDateTime;
 
 @Entity(tableName = "Inscription")
-public class Inscription {
-
+public class Inscription extends DomainEntity{
     @ColumnInfo(name = "registrationTime")
     private LocalDateTime registrationTime;
 
-    public Inscription(LocalDateTime registrationTime) {
-        this.registrationTime = registrationTime;
+    public Inscription() {
+
+        super();
+
     }
 
     public LocalDateTime getRegistrationTime() {

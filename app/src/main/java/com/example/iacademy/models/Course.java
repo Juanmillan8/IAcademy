@@ -9,7 +9,7 @@ import java.time.LocalDate;
 //título, descripción, nivel, capacidad de matrículas, fecha de inicio de
 //matriculación, fecha de fin de matriculación, y si está activado o no
 @Entity(tableName = "Course")
-public class Course {
+public class Course extends DomainEntity{
 
     @ColumnInfo(name = "title")
     private String title;
@@ -32,17 +32,9 @@ public class Course {
     @ColumnInfo(name = "activated")
     private boolean activated;
 
-    @PrimaryKey(autoGenerate = true)
-    private long id;
+    public Course() {
+        super();
 
-    public Course(String title, String description, String level, int capacity, LocalDate startDate, LocalDate endDate, boolean active) {
-        this.title = title;
-        this.description = description;
-        this.level = level;
-        this.capacity = capacity;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.activated = active;
     }
 
     public String getTitle() {
@@ -73,10 +65,6 @@ public class Course {
         return activated;
     }
 
-    public long getId() {
-        return id;
-    }
-
     public void setTitle(String title) {
         this.title = title;
     }
@@ -105,7 +93,4 @@ public class Course {
         this.activated = activated;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
 }

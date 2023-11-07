@@ -19,14 +19,6 @@ public class Student extends Person{
     @ColumnInfo(name = "birthdate")
     private String birthdate;
 
-    public Student(String name, String surNames, String email, String number, String dni, String familynumber, String birthdate) {
-        super(name, surNames, email);
-        this.number = number;
-        this.dni = dni;
-        this.familynumber = familynumber;
-        this.birthdate = birthdate;
-    }
-
     public Student() {
         super();
     }

@@ -16,13 +16,6 @@ public class Manager extends Person{
     @PrimaryKey(autoGenerate = true)
     private long id;
 
-    public Manager(String name, String surNames, String email, String dni, String number, long id) {
-        super(name, surNames, email);
-        this.dni = dni;
-        this.number = number;
-        this.id = id;
-    }
-
     public Manager() {
         super();
     }
@@ -35,11 +28,6 @@ public class Manager extends Person{
         this.number = number;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-
     public String getDni() {
         return dni;
     }
@@ -48,7 +36,4 @@ public class Manager extends Person{
         return number;
     }
 
-    public long getId() {
-        return id;
-    }
 }

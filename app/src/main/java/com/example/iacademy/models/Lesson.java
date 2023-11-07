@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity(tableName = "Lesson")
-public class Lesson {
+public class Lesson extends DomainEntity{
 
     @ColumnInfo(name = "lessonDate")
     private LocalDate lessonDate;
@@ -15,9 +15,10 @@ public class Lesson {
     @ColumnInfo(name = "lessonHour")
     private LocalTime lessonHour;
 
-    public Lesson(LocalDate lessonDate, LocalTime lessonHour) {
-        this.lessonDate = lessonDate;
-        this.lessonHour = lessonHour;
+    public Lesson() {
+
+        super();
+
     }
 
     public LocalDate getLessonDate() {

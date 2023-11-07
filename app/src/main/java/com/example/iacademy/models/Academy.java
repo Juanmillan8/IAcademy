@@ -2,10 +2,12 @@ package com.example.iacademy.models;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "Academy")
-public class Academy {
+@Entity(tableName = "Academy", foreignKeys = @ForeignKey(entity = Manager.class, parentColumns = "id",
+        childColumns = "manager_id", onDelete = ForeignKey.CASCADE))
+public class Academy extends DomainEntity{
 
     @ColumnInfo(name = "name")
     private String name;
@@ -34,98 +36,90 @@ public class Academy {
     @ColumnInfo(name = "phone")
     private String phone;
 
-    @PrimaryKey(autoGenerate = true)
-    private long id;
+    @ColumnInfo(name = "manager_id")
+    private long manager_id;
 
-    public Academy(String name, String description, String country, String province, String city, String address, String url, String email, String phone) {
-        this.name = name;
-        this.description = description;
-        this.country = country;
-        this.province = province;
-        this.city = city;
-        this.address = address;
-        this.url = url;
-        this.email = email;
-        this.phone = phone;
+    public Academy() {
+        super();
     }
 
     public String getName() {
         return name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public String getProvince() {
-        return province;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public long getId() {
-        return id;
-    }
-
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
+    public String getCountry() {
+        return country;
+    }
+
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public String getProvince() {
+        return province;
     }
 
     public void setProvince(String province) {
         this.province = province;
     }
 
+    public String getCity() {
+        return city;
+    }
+
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getAddress() {
+        return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public void getId(long id){
-        this.id = id;
+    public long getManager_id() {
+        return manager_id;
+    }
+
+    public void setManager_id(long manager_id) {
+        this.manager_id = manager_id;
     }
 }

@@ -16,17 +16,6 @@ public class Teacher extends Person{
     @ColumnInfo(name = "address")
     private String address;
 
-    @PrimaryKey(autoGenerate = true)
-    private long id;
-
-
-    public Teacher(String name, String surNames, String email, String number, String dni, String address, long id) {
-        super(name, surNames, email);
-        this.number = number;
-        this.dni = dni;
-        this.address = address;
-        this.id = id;
-    }
 
     public Teacher() {
         super();
@@ -44,10 +33,6 @@ public class Teacher extends Person{
         this.address = address;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getNumber() {
         return number;
     }
@@ -60,7 +45,4 @@ public class Teacher extends Person{
         return address;
     }
 
-    public long getId() {
-        return id;
-    }
 }

@@ -1,10 +1,11 @@
 package com.example.iacademy.models;
 
 import androidx.room.ColumnInfo;
+import androidx.room.Embedded;
 import androidx.room.Entity;
 
 @Entity
-public abstract class Person {
+public abstract class Person extends DomainEntity{
 
     @ColumnInfo(name = "name")
     private String name;
@@ -15,13 +16,12 @@ public abstract class Person {
     @ColumnInfo(name = "email")
     private String email;
 
-    public Person(String name, String surNames, String email) {
-        this.name = name;
-        this.surNames = surNames;
-        this.email = email;
-    }
+    @Embedded
+    private UserAccount userAccount;
 
     public Person() {
+        super();
+
     }
 
     public String getName() {
