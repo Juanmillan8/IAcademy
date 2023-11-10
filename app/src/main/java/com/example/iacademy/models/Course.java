@@ -2,13 +2,16 @@ package com.example.iacademy.models;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 import java.time.LocalDate;
 
 //título, descripción, nivel, capacidad de matrículas, fecha de inicio de
 //matriculación, fecha de fin de matriculación, y si está activado o no
-@Entity(tableName = "Course")
+@Entity(tableName = "Course", foreignKeys = {@ForeignKey(entity = Academy.class, parentColumns = "id",
+        childColumns = "academy_id", onDelete = ForeignKey.CASCADE), @ForeignKey(entity = Teacher.class, parentColumns = "id",
+        childColumns = "teacher_id", onDelete = ForeignKey.CASCADE)})
 public class Course extends DomainEntity{
 
     @ColumnInfo(name = "title")
@@ -29,12 +32,33 @@ public class Course extends DomainEntity{
     @ColumnInfo(name = "endDate")
     private LocalDate endDate;
 
+    @ColumnInfo(name = "academy_id")
+    private long academyId;
+
+    @ColumnInfo(name = "teacher_id")
+    private long teacherId;
     @ColumnInfo(name = "activated")
     private boolean activated;
 
     public Course() {
         super();
 
+    }
+
+    public long getAcademyId() {
+        return academyId;
+    }
+
+    public void setAcademyId(long academyId) {
+        this.academyId = academyId;
+    }
+
+    public long getTeacherId() {
+        return teacherId;
+    }
+
+    public void setTeacherId(long teacherId) {
+        this.teacherId = teacherId;
     }
 
     public String getTitle() {
