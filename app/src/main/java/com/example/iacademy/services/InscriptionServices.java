@@ -17,17 +17,17 @@ public class InscriptionServices implements com.example.iacademy.daos.Inscriptio
 
     }
     @Override
-    public long insertMatricula(com.example.iacademy.daos.InscriptionDao matricula) {
+    public long insertInscription(com.example.iacademy.daos.InscriptionDao matricula) {
         return 0;
     }
 
     @Override
-    public void updateMatricula(com.example.iacademy.daos.InscriptionDao matricula) {
+    public void updateInscription(com.example.iacademy.daos.InscriptionDao matricula) {
 
     }
 
     @Override
-    public void deleteMatricula(com.example.iacademy.daos.InscriptionDao matricula) {
+    public void deleteInscription(com.example.iacademy.daos.InscriptionDao matricula) {
 
     }
 
