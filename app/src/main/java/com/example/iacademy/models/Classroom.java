@@ -37,5 +37,11 @@ public class Classroom extends DomainEntity{
         this.capacity = capacity;
     }
 
+    public long getLesson_id() {
+        return lesson_id;
+    }
 
+    public void setLesson_id(long lesson_id) {
+        this.lesson_id = lesson_id;
+    }
 }
