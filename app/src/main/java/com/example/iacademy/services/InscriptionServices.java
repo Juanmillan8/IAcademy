@@ -3,6 +3,7 @@ package com.example.iacademy.services;
 import android.app.Application;
 
 import com.example.iacademy.database.DatabaseHelper;
+import com.example.iacademy.models.Inscription;
 
 import java.util.List;
 
@@ -16,18 +17,27 @@ public class InscriptionServices implements com.example.iacademy.daos.Inscriptio
         inscriptionDao = db.inscriptionDao();
 
     }
+
+
     @Override
-    public long insertInscription(com.example.iacademy.daos.InscriptionDao matricula) {
+    public long insertInscription(Inscription inscription) {
+
+        inscriptionDao.insertInscription(inscription);
+
         return 0;
     }
 
     @Override
-    public void updateInscription(com.example.iacademy.daos.InscriptionDao matricula) {
+    public void updateInscription(Inscription inscription) {
+
+        inscriptionDao.updateInscription(inscription);
 
     }
 
     @Override
-    public void deleteInscription(com.example.iacademy.daos.InscriptionDao matricula) {
+    public void deleteInscription(Inscription inscription) {
+
+        inscriptionDao.deleteInscription(inscription);
 
     }
 
