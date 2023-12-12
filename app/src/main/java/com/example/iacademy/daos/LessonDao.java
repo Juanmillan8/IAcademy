@@ -1,5 +1,6 @@
 package com.example.iacademy.daos;
 
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -9,6 +10,7 @@ import com.example.iacademy.models.Lesson;
 
 import java.util.List;
 
+@Dao
 public interface LessonDao {
 
     @Insert

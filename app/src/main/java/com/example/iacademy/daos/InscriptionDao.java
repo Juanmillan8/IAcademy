@@ -6,22 +6,24 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.iacademy.models.Inscription;
+
 import java.util.List;
 
 @Dao
 public interface InscriptionDao {
 
     @Insert
-    long insertMatricula(InscriptionDao matricula);
+    long insertMatricula(Inscription matricula);
 
     @Update
-    void updateMatricula(InscriptionDao matricula);
+    void updateMatricula(Inscription matricula);
 
     @Delete
-    void deleteMatricula(InscriptionDao matricula);
+    void deleteMatricula(Inscription matricula);
 
     @Query("SELECT * FROM Inscription")
-    List<InscriptionDao> getAll();
+    List<Inscription> getAll();
 
 
 }
