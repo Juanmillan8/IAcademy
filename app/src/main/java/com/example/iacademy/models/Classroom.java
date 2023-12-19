@@ -2,8 +2,10 @@ package com.example.iacademy.models;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 
-@Entity(tableName = "Classroom")
+@Entity(tableName = "Classroom", foreignKeys = @ForeignKey(entity = Lesson.class, parentColumns = "id",
+        childColumns = "lesson_id", onDelete = ForeignKey.CASCADE))
 public class Classroom extends DomainEntity{
 
     @ColumnInfo(name = "name")
@@ -11,6 +13,9 @@ public class Classroom extends DomainEntity{
 
     @ColumnInfo(name = "capacity")
     private long capacity;
+
+    @ColumnInfo(name = "lesson_id")
+    private long lesson_id;
 
     public Classroom() {
         super();
@@ -30,5 +35,13 @@ public class Classroom extends DomainEntity{
 
     public void setCapacity(long capacity) {
         this.capacity = capacity;
+    }
+
+    public long getLesson_id() {
+        return lesson_id;
+    }
+
+    public void setLesson_id(long lesson_id) {
+        this.lesson_id = lesson_id;
     }
 }

@@ -32,6 +32,21 @@ public class InscriptionServices implements InscriptionDao {
     }
 
     @Override
+    public long insertInscription(Inscription inscription) {
+        return 0;
+    }
+
+    @Override
+    public void updateInscription(Inscription inscription) {
+
+    }
+
+    @Override
+    public void deleteInscription(Inscription inscription) {
+
+    }
+
+    @Override
     public List<Inscription> getAll() {
         return null;
     }

@@ -47,4 +47,12 @@ public abstract class Person extends DomainEntity{
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public UserAccount getUserAccount() {
+        return userAccount;
+    }
+
+    public void setUserAccount(UserAccount userAccount) {
+        this.userAccount = userAccount;
+    }
 }

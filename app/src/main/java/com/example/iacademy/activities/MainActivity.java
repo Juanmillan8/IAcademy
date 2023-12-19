@@ -1,9 +1,11 @@
-package com.example.iacademy;
+package com.example.iacademy.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.example.iacademy.R;
 
 public class MainActivity extends AppCompatActivity {
 
